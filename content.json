@@ -1,0 +1,25 @@
+{
+  "about":"Serviços de dados da São Paulo Urbanismo",
+  "apps": [
+    {
+      "name": "Apropriação de horas",
+      "path":"/apropriacaohoras",
+      "description": "Sistema de apropriação de horas trabalhadas, gerenciamento de pessoal e relatoria de trabalho da São Paulo Urbanismo "
+    },
+    {
+      "name": "CEPAC's",
+      "path":"/cepacs",
+      "description": "Relatórios de Certificados de Potencial Adicional de Construção das Operações Urbanas"
+    },
+    {
+      "name": "SISOUC",
+      "path":"/sisouc",
+      "description": "Sistema Operações Urbanas Consorciadas. Tem como objetico garantir o correto preenchimento dos documentos modelo exigidos por Lei"
+    },
+    {
+      "name": "Transparência",
+      "path":"/transparencia",
+      "description": "Contrato social, organograma, conselho fiscal, conselho fiscal, conselho administrativo, funcionários, cargos e salários, balancete, pagamentos e fluxo de caixa"
+    }
+ ]
+}
