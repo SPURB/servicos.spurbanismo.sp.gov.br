@@ -30,6 +30,13 @@ module.exports =  ({ mode }) => {
 		module: {
 			rules: [
 				{
+					test: /\.svg$/,
+					loader: 'svg-inline-loader',
+					options: {
+						removeTags: true
+					}
+				},
+				{
 					test: /\.s[ac]ss$/i,
 					use: [
 						'style-loader',
