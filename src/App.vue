@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import content from './assets/content.json'
+import content from './content.json'
 import { reactive } from 'vue'
 import Hero from './components/Hero.vue'
 import AppListItem from './components/AppListItem.vue'
