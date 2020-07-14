@@ -34,7 +34,7 @@
 export default {
   name: 'BtnScrollerDown',
   props: {
-    collapsed: {
+    collapse: {
       type: Boolean,
       required: true
     }
@@ -44,5 +44,11 @@ export default {
 <style lang="scss" scoped>
 .btn-scroller-down {
   cursor: pointer;
+  background-color: #5CD6C9;
+  height: 10vh;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 </style>

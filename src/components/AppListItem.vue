@@ -1,5 +1,5 @@
 <template>
-  <li class='list-item'>
+  <li class='list-item' :style="{ backgroundColor: background }">
     <a :href="path">
       <h3>{{ name }}</h3>
       <p>{{ description }}</p>
@@ -21,7 +21,33 @@ export default {
     description: {
       type: String,
       required: true
+    },
+    background: {
+      type: String,
+      required: true
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.list-item {  
+  display: flex;
+  height: 25%;
+  text-align: left;
+  align-items: center;
+  padding: 0 15px;
+
+  background-color: #005249;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+  }
+}
+</style>
