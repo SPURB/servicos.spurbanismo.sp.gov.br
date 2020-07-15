@@ -91,7 +91,7 @@ $verde-claro: #5CD6C9;
     &.animation {
       height: 5vh;
       padding: 15px 0;
-      animation: minimum 3s ease-in-out;
+      animation: minimum 2s ease-in-out;
     }
   }
 

@@ -35,18 +35,45 @@ export default {
   display: flex;
   height: 25%;
   text-align: left;
-  align-items: center;
-  padding: 0 15px;
-
-  background-color: #005249;
+  align-items: center; 
 
   a {
     color: #fff;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;  
+  
+    &:hover {
+      background-color: #4F4F4F;
+      transition: ease-in-out .5s;
+      box-shadow: 0px -8px 8px rgba(0, 0, 0, 0.25);
+    }
 
     h3 {
       font-size: 2rem;
       margin-bottom: 15px;
+    }
+
+    @media (min-width: 1024px) {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+
+      h3, p {
+        width: 50%;
+      }
+
+      h3 {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      p {
+        font-size: 14pt;
+      }
     }
   }
 }
