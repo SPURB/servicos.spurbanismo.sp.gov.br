@@ -1,6 +1,6 @@
 <template>
-  <div class="btn-scroller-down">
-    <svg class="btn-scroller-down__icon" width="80" height="52" viewBox="0 0 80 52" fill="none">
+  <div class="btn-scroller-down" @mouseenter="hovering=true" @mouseleave="hovering=false">
+    <svg class="btn-scroller-down__icon" width="80" height="52" :viewBox="`0 0 80 ${ hovering ? '40' : '52' }`" fill="none">
       <g filter="url(#filter0_d)">
         <path d="M9 6L39 36L69 6" stroke="white" stroke-width="5" />
       </g>
@@ -33,6 +33,11 @@
 <script>
 export default {
   name: 'BtnScrollerDown',
+  data () {
+    return {
+      hovering: false
+    }
+  },
   props: {
     collapse: {
       type: Boolean,
@@ -45,10 +50,16 @@ export default {
 .btn-scroller-down {
   cursor: pointer;
   background-color: #5CD6C9;
-  height: 10vh;
+  height: 8vh;
   justify-content: center;
   width: 100%;
   display: flex;
   align-items: center;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+  transition: all ease-in-out 0.15s;
+  &:hover {
+    height: 8.5vh;
+    box-shadow: 0px -5px 4px rgba(0, 0, 0, 0.20);
+  }
 }
 </style>

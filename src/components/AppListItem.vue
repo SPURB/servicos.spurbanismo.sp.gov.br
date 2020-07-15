@@ -2,7 +2,7 @@
   <li class='list-item' :style="{ backgroundColor: background }">
     <a :href="path">
       <h3>{{ name }}</h3>
-      <p>{{ description }}</p>
+      <p class='list-item__description'>{{ description }}</p>
     </a>
   </li>
 </template>
@@ -33,10 +33,13 @@ export default {
 <style lang="scss" scoped>
 .list-item {  
   display: flex;
-  height: 25%;
+  height: calc(93vh / 4);
   text-align: left;
   align-items: center; 
 
+  p {
+    line-height: 1.52;
+  }
   a {
     color: #fff;
     display: flex;
@@ -49,8 +52,9 @@ export default {
   
     &:hover {
       background-color: #4F4F4F;
-      transition: ease-in-out .5s;
-      box-shadow: 0px -8px 8px rgba(0, 0, 0, 0.25);
+      transition: ease-in-out .15s;
+      box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+      height: 105%;
     }
 
     h3 {

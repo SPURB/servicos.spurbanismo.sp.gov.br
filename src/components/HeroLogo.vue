@@ -1,5 +1,5 @@
 <template>
-  <svg width="255" height="61" viewBox="0 0 255 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="hero-logo" :class="{ 'hero-logo--collapse': collapse }" width="255" height="61" viewBox="0 0 255 61" fill="none">
     <path d="M37.4369 0.44397V40.4769H44.8969V7.93342L37.4369 0.44397Z" fill="#008375" />
     <path d="M49.8718 60.4951L29.9741 40.475H37.4374L49.8718 52.9897V60.4951Z" fill="#008375" />
     <path d="M0.1362 40.4769L20.0286 60.4951V47.9838L12.5658 40.4769H0.1362Z" fill="#008375" />
@@ -65,9 +65,14 @@ export default {
       required: true
     }
   },
-  name: 'HeroLogo',
-  setup (props) {
-    // console.log(props.collapse)
-  }
+  name: 'HeroLogo'
 }
 </script>
+<style lang="scss" scoped>
+.hero-logo {
+  transition: width ease 0.75s;
+  &--collapse {
+    width: 150px;
+  }
+}
+</style>

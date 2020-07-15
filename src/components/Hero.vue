@@ -1,7 +1,7 @@
 <template>
   <div :class="collapse ? 'hero hero__animation' : 'hero'">
     <hero-logo :collapse="collapse" />
-    <div :class="collapse ? 'hiddenText' : ''" >{{ headline }}</div>
+    <div class='hero__headline' :class="collapse ? 'hiddenText' : ''" >{{ headline }}</div>
   </div>
 </template>
 <script>
@@ -22,11 +22,7 @@ export default {
       type: Boolean,
       required: true
     }
-  },
-  setup ({ collapse }) {
-    watchEffect(() => console.log('Hero.vue ' + collapse))
   }
-  
 }
 </script>
 
@@ -37,19 +33,23 @@ export default {
   align-items: center;
   flex-direction: column;
   display: flex;
-  
+  &__headline {
+    line-height: 4;
+  }
   @media (max-width: 1024px) {
     &__animation {
       width: 100%;
       transition: ease-in-out;
-      animation: slider 2s ease-in-out;
-      -webkit-animation-fill-mode: forwards;    
+      animation: slider 1s ease-in-out;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
     }
   }
 
   > .hiddenText {
-    animation: smoke 1.5s ease-in-out;
-    -webkit-animation-fill-mode: forwards;    
+    animation: smoke 0.75s ease-in-out;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
   }
 }
 @keyframes smoke {
@@ -64,6 +64,4 @@ export default {
   0% { width: 100%;}
   100% { width: 35%; }
 }
-
-
 </style>

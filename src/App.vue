@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="content">
+  <div id="app" class="content" :class="{ 'content--collapsed': collapse }">
     <section class="content__load-screen" :class="collapse ? 'animation' : ''">
       <hero :collapse="collapse" :headline="about" />
       <btn-scroller-down @click="setClick" :collapse="collapse" v-if="!collapse"/>
@@ -22,7 +22,7 @@
 
 <script>
 import content from './content.json'
-import { reactive, toRefs, toRef } from 'vue'
+import { reactive, toRefs, toRef, onMounted } from 'vue'
 import Hero from './components/Hero.vue'
 import HeroLogo from './components/HeroLogo.vue'
 import AppListItem from './components/AppListItem.vue'
@@ -57,6 +57,18 @@ export default {
       state.count++
     }
 
+    onMounted(() => {
+      const { width } = window.screen
+
+      if (width > 1024) {
+        const { body } = window.document
+        body.setAttribute('style', 'overflow:hidden')
+      }
+      else {
+        body.setAttribute('style', 'overflow:auto')
+      }
+    })
+
     return {
       about,
       apps,
@@ -81,7 +93,6 @@ $verde-claro: #5CD6C9;
   justify-content: center;
   font-family: 'Roboto', 'Segoe UI', 'Helvetica', Arial, sans-serif;
 
-
   &__load-screen {
     display: flex;
     flex-direction: column;
@@ -91,17 +102,13 @@ $verde-claro: #5CD6C9;
     &.animation {
       height: 5vh;
       padding: 15px 0;
-      animation: minimum 2s ease-in-out;
+      animation: minimum 1s ease-in-out;
     }
   }
 
   &__main-screen {
-    height: 100vh;
+    height: 97vh;
     width: 100%;
-
-    ul {
-      height: 100%;
-    }
   }
 
   &__btn-scroller {
@@ -110,7 +117,7 @@ $verde-claro: #5CD6C9;
 }
 
 @keyframes minimum {
-  0% { height: 100vh;}
-  100% { height: 5vh; }
+  0% { height: 97vh;}
+  100% { height: 3vh; }
 }
 </style>
