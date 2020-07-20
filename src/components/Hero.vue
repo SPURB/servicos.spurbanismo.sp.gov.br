@@ -1,5 +1,5 @@
 <template>
-  <div :class="collapse ? 'hero hero__animation' : 'hero'">
+  <div :class="collapse ? 'hero hero--animation' : 'hero'">
     <hero-logo :collapse="collapse" />
     <div class='hero__headline' :class="collapse ? 'hiddenText' : ''" >{{ headline }}</div>
   </div>
@@ -37,12 +37,9 @@ export default {
     line-height: 4;
   }
   @media (max-width: 1024px) {
-    &__animation {
-      width: 100%;
+    &--animation {
       transition: ease-in-out;
-      animation: slider 1s ease-in-out;
-      animation-fill-mode: forwards;
-      -webkit-animation-fill-mode: forwards;
+      transition-delay: 1.25s;
     }
   }
 
@@ -58,10 +55,5 @@ export default {
   50% { opacity: .50; }
   75% { opacity: .25; }
   100% { opacity: 0; height: 0;}
-}
-
-@keyframes slider {
-  0% { width: 100%;}
-  100% { width: 35%; }
 }
 </style>

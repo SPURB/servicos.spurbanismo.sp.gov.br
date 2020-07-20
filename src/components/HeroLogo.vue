@@ -70,7 +70,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .hero-logo {
-  transition: width ease 0.75s;
+  transition: width ease-in-out 0.75s;
+  transition-delay: 0.5s;
   &--collapse {
     width: 150px;
   }

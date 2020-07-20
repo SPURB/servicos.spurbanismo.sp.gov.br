@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="content" :class="{ 'content--collapsed': collapse }">
+  <div id="app" class="content" :class="{ 'content--collapsed': collapse }" @scroll.native="handleScroll">
     <section class="content__load-screen" :class="collapse ? 'animation' : ''">
       <hero :collapse="collapse" :headline="about" />
       <btn-scroller-down @click="setClick" :collapse="collapse" v-if="!collapse"/>
@@ -57,6 +57,10 @@ export default {
       state.count++
     }
 
+    const handleScroll = (event) => {
+      console.log(event)
+    }
+
     onMounted(() => {
       const { width } = window.screen
 
@@ -75,7 +79,8 @@ export default {
       ...toRefs(state),
       setClick,
       setIncrement,
-      setBackground
+      setBackground,
+      handleScroll
     }
   }
 }
@@ -118,6 +123,6 @@ $verde-claro: #5CD6C9;
 
 @keyframes minimum {
   0% { height: 97vh;}
-  100% { height: 3vh; }
+  100% { width: 150px }
 }
 </style>

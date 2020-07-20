@@ -1,5 +1,5 @@
 {
-  "about":"Aplicações web da São Paulo Urbanismo",
+  "about":"Serviços web da São Paulo Urbanismo",
   "apps": [
     {
       "name": "Apropriação de horas",
@@ -8,7 +8,7 @@
     },
     {
       "name": "CEPAC's",
-      "path":"/cepacs",
+      "path":"/cepac",
       "description": "Relatórios de Certificados de Potencial Adicional de Construção das Operações Urbanas"
     },
     {
