@@ -1,10 +1,15 @@
 <template>
-  <div id="app" class="content" :class="{ 'content--collapsed': collapse }" @scroll.native="handleScroll">
+  <div
+    id="app"
+    class="content"
+    :class="{ 'content--collapsed': collapse }"
+    @click="setClick"
+  >
     <section class="content__load-screen" :class="collapse ? 'animation' : ''">
       <hero :collapse="collapse" :headline="about" />
-      <btn-scroller-down @click="setClick" :collapse="collapse" v-if="!collapse"/>
+      <btn-scroller-down  :collapse="collapse" v-if="!collapse"/>
     </section>
-    
+
     <section id="main-screen" class="content__main-screen">
       <ul>
         <app-list-item
@@ -22,7 +27,7 @@
 
 <script>
 import content from './content.json'
-import { reactive, toRefs, toRef, onMounted } from 'vue'
+import { reactive, toRefs, onMounted } from 'vue'
 import Hero from './components/Hero.vue'
 import HeroLogo from './components/HeroLogo.vue'
 import AppListItem from './components/AppListItem.vue'
@@ -57,20 +62,17 @@ export default {
       state.count++
     }
 
-    const handleScroll = (event) => {
-      console.log(event)
-    }
-
     onMounted(() => {
       const { width } = window.screen
+      const { body } = window.document
 
       if (width > 1024) {
-        const { body } = window.document
         body.setAttribute('style', 'overflow:hidden')
       }
       else {
         body.setAttribute('style', 'overflow:auto')
       }
+      
     })
 
     return {
@@ -79,8 +81,7 @@ export default {
       ...toRefs(state),
       setClick,
       setIncrement,
-      setBackground,
-      handleScroll
+      setBackground
     }
   }
 }
