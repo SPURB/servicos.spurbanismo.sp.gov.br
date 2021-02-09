@@ -20,6 +20,11 @@
       "name": "Transparência",
       "path":"/transparencia",
       "description": "Contrato social, organograma, conselho fiscal, conselho fiscal, conselho administrativo, funcionários, cargos e salários, balancete, pagamentos e fluxo de caixa"
+    },
+    {
+      "name": "Vistorias",
+      "path":"/triangulo",
+      "description": "Relatórios de vistorias realizadas na região do triângulo histórico do centro de São Paulo"
     }
  ]
 }

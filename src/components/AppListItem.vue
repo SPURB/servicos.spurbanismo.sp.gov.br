@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .list-item {  
   display: flex;
-  height: calc(93vh / 4);
+  height: calc(93vh / 5);
   text-align: left;
   align-items: center; 
 

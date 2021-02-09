@@ -52,10 +52,9 @@ export default {
     }
     const setBackground = (index) => {
       switch (index) {
-        case 0: return '#5CD6C9'
-        case 1: return '#008375'
+        case 0: case 3: return '#5CD6C9'
+        case 1: case 4: return '#008375'
         case 2: return '#005249'
-        case 3: return '#5CD6C9'
       }
     }
     const setIncrement = () => {
